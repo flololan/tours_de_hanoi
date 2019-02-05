@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/tours_de_hanoi/static/js/runtime~main.009c1c3e.js"
   },
   {
-    "revision": "5c59beddaa07973a8f63",
-    "url": "/tours_de_hanoi/static/js/main.5c59bedd.chunk.js"
+    "revision": "a1632359971b7aec6886",
+    "url": "/tours_de_hanoi/static/js/main.a1632359.chunk.js"
   },
   {
     "revision": "a5c54b27a86accb905c9",
     "url": "/tours_de_hanoi/static/js/1.a5c54b27.chunk.js"
   },
   {
-    "revision": "5c59beddaa07973a8f63",
-    "url": "/tours_de_hanoi/static/css/main.8b1489cf.chunk.css"
+    "revision": "a1632359971b7aec6886",
+    "url": "/tours_de_hanoi/static/css/main.f49dac97.chunk.css"
   },
   {
-    "revision": "d86cf98db8449dd3d813ac1edf42e62d",
+    "revision": "79bee33b5af669ddf8a37a124cf41762",
     "url": "/tours_de_hanoi/index.html"
   }
 ];
