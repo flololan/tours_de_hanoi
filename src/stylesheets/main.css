@@ -4,19 +4,19 @@
 }
 
 .App.light {
-  background-image: url("https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   height: 100vh;
   color: #000;
 }
 .App.light h1 {
-  color: #000000;
+  color: white;
   text-decoration: underline;
   text-align: center;
   font-size: 5em;
   padding: 10px;
 }
 .App.light .important {
-  color: #d91046;
+  color: #ff0044;
 }
 .App.light .btn {
   background-color: #4CAF50; /* Green */
@@ -44,6 +44,10 @@
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  padding: 2%;
+  
   
 }
 
