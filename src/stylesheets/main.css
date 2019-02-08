@@ -5,7 +5,9 @@
 
 .App.light {
   background-image: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 65.1em;
   color: #000;
 }
 .App.light h1 {
@@ -16,7 +18,30 @@
   padding: 10px;
 }
 .App.light .important {
-  color: #ff0044;
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  text-decoration: underline; 
+  font-size: 2em;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 5px;
+  
+  
+}
+
+.progress{
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  text-decoration: underline; 
+  font-size: 2em;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 5px;
+
 }
 .App.light .btn {
   background-color: #4CAF50; /* Green */
@@ -46,7 +71,7 @@
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 25px;
-  padding: 2%;
+  padding: 3em;
   
   
 }
@@ -175,6 +200,10 @@ button.tower-4:first-child {
 
 .Questions {
   padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  
+  
 }
 .Questions .rateInfo {
   display: inline-block;
