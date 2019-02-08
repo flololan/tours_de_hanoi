@@ -24,6 +24,11 @@ export class Questions extends React.Component{
     }
 
     save() {
+        let rows = [["user", "gametype", "timer", "age", "gender", "rate_interest",
+            "rate_stimu", "rate_visu", "rate_complexity", "rate_reactivity",
+            "evalute_time", "time_long", "rate_focus", "rate_raisonnable",
+            "rate_time_satis", "rate_wait"]];
+
         const params =
             "user=" + this.props.user +
             "&game_type=" + this.props.gameType +
@@ -43,8 +48,32 @@ export class Questions extends React.Component{
             "&rate_time_satis=" + this.state.rate_time_satis +
             "&rate_wait=" + this.state.rate_wait;
 
+        /*var fs = require('fs');
+        var json2csv = require('json2csv');
+        var newLine= "\r\n";
+
+        var toCsv = {
+            data: params,
+            fields: fields,
+            hasCSVColumnTitle: false
+        };
+
+        fs.stat('file.csv', function (err, stat) {
+            if (err == null) {
+                //write the actual data and end with newline
+                var csv = json2csv(toCsv) + newLine;
+
+                fs.appendFile('file.csv', csv, function (err) {
+                    if (err) throw err;
+                    //console.log('The "data to append" was appended to file!');
+                });
+            }
+        });*/
+
         const xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "https://unrepented-apportio.000webhostapp.com/saver_question_hanoi.php?"+params);
+        //xhttp.open("GET", "https://unrepented-apportio.000webhostapp.com/saver_question_hanoi.php?"+params);
+        xhttp.open("POST", "https://api.staticman.net/v2/entry/SebastKl/tour_de_hanoi_results/commit_staticmanapp?"+params);
+
         xhttp.send();
     }
 
