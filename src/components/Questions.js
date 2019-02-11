@@ -24,10 +24,6 @@ export class Questions extends React.Component{
     }
 
     save() {
-        let rows = [["user", "gametype", "timer", "age", "gender", "rate_interest",
-            "rate_stimu", "rate_visu", "rate_complexity", "rate_reactivity",
-            "evalute_time", "time_long", "rate_focus", "rate_raisonnable",
-            "rate_time_satis", "rate_wait"]];
 
         const params =
             "user=" + this.props.user +
@@ -48,34 +44,16 @@ export class Questions extends React.Component{
             "&rate_time_satis=" + this.state.rate_time_satis +
             "&rate_wait=" + this.state.rate_wait;
 
-        /*var fs = require('fs');
-        var json2csv = require('json2csv');
-        var newLine= "\r\n";
 
-        var toCsv = {
-            data: params,
-            fields: fields,
-            hasCSVColumnTitle: false
-        };
-
-        fs.stat('file.csv', function (err, stat) {
-            if (err == null) {
-                //write the actual data and end with newline
-                var csv = json2csv(toCsv) + newLine;
-
-                fs.appendFile('file.csv', csv, function (err) {
-                    if (err) throw err;
-                    //console.log('The "data to append" was appended to file!');
-                });
-            }
-        });*/
-
-        const xhttp = new XMLHttpRequest();
+        //const xhttp = new XMLHttpRequest();
         //xhttp.open("GET", "https://unrepented-apportio.000webhostapp.com/saver_question_hanoi.php?"+params);
-        xhttp.open("POST", "https://api.staticman.net/v2/entry/SebastKl/tour_de_hanoi_results/commit_staticmanapp?"+params);
+        //xhttp.open("POST", "https://api.staticman.net/v2/entry/SebastKl/tour_de_hanoi_results/commit_staticmanapp?"+params);
+        //sendEmail({subject: "Tour de hanoi results", text: "results:\n" + params, to: "joe@exam.pl"});
 
-        xhttp.send();
+        //xhttp.send();
+        sendmail(params);
     }
+
 
     render() {
         return(
@@ -240,3 +218,36 @@ export class Questions extends React.Component{
         this.props.next();
     }
 }
+function sendmail(content){
+const nodemailer = require('nodemailer');
+    nodemailer.createTestAccount((err, account) => {
+        if (err) {
+            console.error('Failed to create a testing account. ' + err.message);
+            return process.exit(1);
+        }
+        console.log('Credentials obtained, sending message...');
+        let transporter = nodemailer.createTransport({
+            host: account.smtp.host,
+            port: account.smtp.port,
+            secure: account.smtp.secure,
+            auth: {
+                user: account.user,
+                pass: account.pass
+            }
+        });
+        let message = {
+
+            from: 'Sender Name <vflni63zvj6z@opayq.com>',
+            to: 'Recipient <vflni63zvj6z@opayq.com>',
+            subject: 'tour de hanoi result',
+            text: 'result:' + content,
+        };
+        transporter.sendMail(message, (err, info) => {
+            if (err) {
+                console.log('Error occurred. ' + err.message);
+                return process.exit(1);
+            }
+            console.log('Message sent: %s', info.messageId);
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        });
+    });}
