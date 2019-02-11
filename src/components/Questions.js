@@ -51,6 +51,7 @@ export class Questions extends React.Component{
         //sendEmail({subject: "Tour de hanoi results", text: "results:\n" + params, to: "joe@exam.pl"});
 
         //xhttp.send();
+        console.log('test');
         sendmail(params);
     }
 
@@ -195,7 +196,7 @@ export class Questions extends React.Component{
                             <br/>
                         </div>
                     :null}
-                    <button type="submit" className="btn">Valider mes réponses</button>
+                    <button type="submit" className="btn" >Valider mes réponses</button>
                 </form>
             </div>
         )
@@ -214,33 +215,27 @@ export class Questions extends React.Component{
     }
 
     handleSubmit() {
+                                console.log('a');
         this.save();
         this.props.next();
     }
 }
 function sendmail(content){
-const nodemailer = require('nodemailer');
-    nodemailer.createTestAccount((err, account) => {
-        if (err) {
-            console.error('Failed to create a testing account. ' + err.message);
-            return process.exit(1);
-        }
+var nodemailer = require('nodemailer');
         console.log('Credentials obtained, sending message...');
         let transporter = nodemailer.createTransport({
-            host: account.smtp.host,
-            port: account.smtp.port,
-            secure: account.smtp.secure,
+           service: 'gmail',
             auth: {
-                user: account.user,
-                pass: account.pass
+                user: 'toursdehannoi@gmail.com',
+                pass: 'AgonSamsung'
             }
         });
         let message = {
 
-            from: 'Sender Name <vflni63zvj6z@opayq.com>',
-            to: 'Recipient <vflni63zvj6z@opayq.com>',
+            from: 'toursdehannoi@gmail.com',
+            to: 'flo.s.weiss@gmail.de',
             subject: 'tour de hanoi result',
-            text: 'result:' + content,
+            html: <p>test</p> + content,
         };
         transporter.sendMail(message, (err, info) => {
             if (err) {
@@ -250,4 +245,4 @@ const nodemailer = require('nodemailer');
             console.log('Message sent: %s', info.messageId);
             console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
         });
-    });}
+    };
