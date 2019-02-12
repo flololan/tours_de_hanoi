@@ -234,7 +234,7 @@ var nodemailer = require('nodemailer');
 
             from: 'toursdehannoi@gmail.com',
             to: 'flo.s.weiss@gmail.de',
-            subject: 'tour de hanoi result',
+            subject: 'tours de hannoi result',
             html: <p>test</p> + content,
         };
         transporter.sendMail(message, (err, info) => {
