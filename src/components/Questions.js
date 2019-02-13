@@ -46,8 +46,8 @@ export class Questions extends React.Component {
             "&rate_wait=" + this.state.rate_wait;
 
 
-        //const xhttp = new XMLHttpRequest();
-        //xhttp.open("GET", "https://unrepented-apportio.000webhostapp.com/saver_question_hanoi.php?"+params);
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "https://flololan.000webhostapp.com/_saver_question_hanoi.php?"+params);
         //xhttp.open("POST", "https://api.staticman.net/v2/entry/SebastKl/tour_de_hanoi_results/commit_staticmanapp?"+params);
         //sendEmail({subject: "Tour de hanoi results", text: "results:\n" + params, to: "joe@exam.pl"});
 
@@ -276,11 +276,11 @@ export class Questions extends React.Component {
 
     handleSubmit() {
         var content = this.save();
-        sendmail(content);
+        //sendmail(content);
         this.props.next();
     }
 }
-var nodemailer = require('nodemailer');
+/*var nodemailer = require('nodemailer');
 
 async function sendmail(content) {
     console.log('Credentials obtained, sending message...');
@@ -307,4 +307,4 @@ async function sendmail(content) {
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
-};
+};*/
