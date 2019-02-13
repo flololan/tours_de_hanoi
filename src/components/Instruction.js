@@ -1,5 +1,10 @@
 import React, {Component} from "react";
 
+var x = window.matchMedia("(max-width: 700px)")
+if (x.matches) { // If media query matches
+    alert("please use a desktop browser");
+}
+
 export class Instruction extends Component{
     render() {
         return (

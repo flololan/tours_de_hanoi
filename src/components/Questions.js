@@ -48,10 +48,9 @@ export class Questions extends React.Component {
 
         const xhttp = new XMLHttpRequest();
         xhttp.open("GET", "https://flololan.000webhostapp.com/_saver_question_hanoi.php?"+params);
-        //xhttp.open("POST", "https://api.staticman.net/v2/entry/SebastKl/tour_de_hanoi_results/commit_staticmanapp?"+params);
         //sendEmail({subject: "Tour de hanoi results", text: "results:\n" + params, to: "joe@exam.pl"});
 
-        //xhttp.send();
+        xhttp.send();
 
         return this.params;
     }

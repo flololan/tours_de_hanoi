@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tours_de_hanoi/precache-manifest.86208a701c75963c54c24ab77587a3a8.js"
+  "/tours_de_hanoi/precache-manifest.c584c456823be50a099cbdf1a4758189.js"
 );
 
 workbox.clientsClaim();
